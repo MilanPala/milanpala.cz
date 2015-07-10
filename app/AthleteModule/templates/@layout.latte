@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>{$nadpis}</title>
+
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css" type="text/css">
+	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css" type="text/css">
+
+	<style>
+		body {
+			font: 16px/1.5 Georgia, serif;
+			color: #333;
+			background-color: #fff;
+			margin-left: 150px;
+			margin-bottom: 50px;
+			background: url({$basePath}/images/atlet/draha_start.gif) no-repeat left top fixed, url({$basePath}/images/atlet/draha.gif) repeat-y,no-repeat left top;
+		}
+
+		h1 {
+			font: bold 47px/1.5 sans-serif;
+			margin: .6em 0
+		}
+
+		.obsah {
+			margin-left: 2em;
+		}
+
+		#menu ul {
+			margin-left: 0;
+			padding-left: 0;
+		}
+		#menu:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+
+		#menu li {
+			width: 80px; float: left;
+			list-style-type: none;
+			margin-left: 0;
+		}
+
+		#patka {
+			background: #eef; border: 1px solid #00f; margin: 3em 0;  padding: 0 1em 1em 1em;
+		}
+	</style>
+
+	{block head}{/block}
+</head>
+
+<body>
+	<script> document.body.className+=' js' </script>
+
+	<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+
+	<h1>{$nadpis}</h1>
+
+	<ul id="menu">
+		<li><a href="{plink year, 2003}">2003</a></li>
+		<li><a href="{plink year, 2004}">2004</a></li>
+		<li><a href="{plink year, 2005}">2005</a></li>
+		<li><a href="{plink year, 2006}">2006</a></li>
+		<li><a href="{plink year, 2007}">2007</a></li>
+		<li><a href="{plink records}">rekordy</a></li>
+	</ul>
+
+	{include #content}
+
+	<div id="patka">
+		<h2>Milan Pála - atlet</h2>
+		<p>Přejít na <a n:href=":Personal:Homepage:default">milanpala.cz</a></p>
+	</div>
+</body>
+</html>

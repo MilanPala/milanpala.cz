@@ -1,3 +1,7 @@
 /.idea
 /vendor
-app/config/config.local.neon
+/www/css
+/www/fonts
+/www/js
+/node_modules
+config.local.neon

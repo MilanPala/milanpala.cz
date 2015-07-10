@@ -1,0 +1,10 @@
+{
+  "name": "milanpala.cz",
+  "private": true,
+  "dependencies": {
+    "jquery": "1.*",
+    "jobtron": "n33/jquery.dropotron#1.4.*",
+    "skel": "3.0.*",
+    "font-awesome": "4.*"
+  }
+}

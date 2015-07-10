@@ -1,8 +1,5 @@
-# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
-# http://nette.org/security-warning
-
 parameters:
-
+	ssl: on
 
 php:
 	date.timezone: Europe/Prague
@@ -20,4 +17,10 @@ session:
 
 
 services:
-	router: App\Router\RouterFactory::createRouter
+	router: App\Router\RouterFactory::createRouter(%ssl%)
+
+	- App\Filters\Datum
+
+	nette.latteFactory:
+		setup:
+			- addFilter('datum', [@App\Filters\Datum, filter])
