@@ -10,11 +10,21 @@ class RouterFactory
 
 	/**
 	 * @param bool $ssl
+	 */
+	public function __construct($ssl)
+	{
+		$this->ssl = $ssl;
+	}
+
+
+	/**
 	 * @return Nette\Application\IRouter
 	 */
-	public static function createRouter($ssl)
+	public function create()
 	{
-		if ($ssl) Nette\Application\Routers\Route::$defaultFlags = Nette\Application\Routers\Route::SECURED;
+		if ($this->ssl) {
+			Nette\Application\Routers\Route::$defaultFlags = Nette\Application\Routers\Route::SECURED;
+		}
 
 		$router = new Nette\Application\Routers\RouteList();
 		$router[] = new Nette\Application\Routers\Route('atlet/', [
@@ -37,6 +47,7 @@ class RouterFactory
 			'presenter' => 'Homepage',
 			'action' => 'default',
 		]);
+
 		return $router;
 	}
 

@@ -3,7 +3,7 @@
 namespace App\Filters;
 
 
-class Datum
+class Date
 {
 
 	public function filter($value)

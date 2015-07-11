@@ -17,10 +17,11 @@ session:
 
 
 services:
-	router: App\Router\RouterFactory::createRouter(%ssl%)
+	- App\Router\RouterFactory(%ssl%)
+	- App\Filters\Date
 
-	- App\Filters\Datum
+	router: [@App\Router\RouterFactory, create]
 
 	nette.latteFactory:
 		setup:
-			- addFilter('datum', [@App\Filters\Datum, filter])
+			- addFilter('datum', [@App\Filters\Date, filter])
