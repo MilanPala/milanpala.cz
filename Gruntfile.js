@@ -64,6 +64,15 @@ module.exports = function(grunt) {
 						dest: "www/css/",
 						flatten: true,
 						expand: true
+					},
+					{
+						cwd: "assets/js/",
+						src: [
+							"gtm.js"
+						],
+						dest: "www/js/",
+						flatten: true,
+						expand: true
 					}
 				]
 			}
