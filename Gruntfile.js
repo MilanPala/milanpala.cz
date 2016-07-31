@@ -80,12 +80,26 @@ module.exports = function(grunt) {
 		sass: {
 			common: {
 				options: {
-					style: "expanded",
+					style: "compressed",
 					cacheLocation: "temp/.sass-cache",
 					sourcemap: "none"
 				},
 				files: {
 					"www/css/main.css": "assets/sass/main.scss"
+				}
+			}
+		},
+		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1,
+				report: "gzip"
+			},
+			common: {
+				files: {
+					'www/css/main.css': [
+						'www/css/main.css'
+					]
 				}
 			}
 		}
@@ -97,6 +111,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-sass");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
 
-	grunt.registerTask("default", ["bower-install-simple:common", "concat:common", "uglify:common", "copy:common", "sass:common"]);
+	grunt.registerTask("default", ["bower-install-simple:common", "concat:common", "uglify:common", "copy:common", "sass:common", "cssmin:common"]);
 };
