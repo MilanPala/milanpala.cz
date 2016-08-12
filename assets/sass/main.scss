@@ -81,13 +81,12 @@
 
 	a {
 		@include vendor('transition', 'color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out');
-		color: _palette(accent, bg);
+		color: _palette(fg);
 		text-decoration: none;
 		border-bottom: dotted 1px;
 
 		&:hover {
 			color: _palette(accent, bg);
-			border-bottom-color: transparent;
 		}
 	}
 
