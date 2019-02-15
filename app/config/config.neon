@@ -1,6 +1,3 @@
-parameters:
-	ssl: off
-
 php:
 	date.timezone: Europe/Prague
 
@@ -17,7 +14,7 @@ session:
 
 
 services:
-	- App\Router\RouterFactory(%ssl%)
+	- App\Router\RouterFactory
 	- App\Filters\Date
 
 	router: [@App\Router\RouterFactory, create]

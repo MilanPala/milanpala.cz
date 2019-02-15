@@ -9,23 +9,10 @@ class RouterFactory
 {
 
 	/**
-	 * @param bool $ssl
-	 */
-	public function __construct($ssl)
-	{
-		$this->ssl = $ssl;
-	}
-
-
-	/**
 	 * @return Nette\Application\IRouter
 	 */
-	public function create()
+	public function create(): Nette\Application\IRouter
 	{
-		if ($this->ssl) {
-			Nette\Application\Routers\Route::$defaultFlags = Nette\Application\Routers\Route::SECURED;
-		}
-
 		$router = new Nette\Application\Routers\RouteList();
 		$router[] = new Nette\Application\Routers\Route('atlet/', [
 			'module' => 'Athlete',
