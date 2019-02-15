@@ -1,14 +1,16 @@
 {
-	"name": "MilanPala/milanpala.cz",
+	"name": "milanpala/milanpala.cz",
+	"description": "Soukromé webové stránky",
 	"type": "project",
-	"license": ["MIT", "BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"license": ["MIT"],
 	"require": {
-		"php": ">= 7.0.0",
-		"nette/application": "~2.4.0",
-		"nette/bootstrap": "~2.4.0",
-		"latte/latte": "~2.4.0",
-		"tracy/tracy": "~2.4.0"
+		"php": ">= 7.3.0",
+		"nette/application": "3.0.*",
+		"nette/bootstrap": "3.0.*",
+		"latte/latte": "3.0.*",
+		"tracy/tracy": "2.5.*"
 	},
+	"minimum-stability": "beta",
 	"autoload": {
 		"psr-4": {
 			"App\\": "app"
