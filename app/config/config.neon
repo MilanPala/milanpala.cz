@@ -3,10 +3,9 @@ php:
 
 
 application:
-	errorPresenter: Error
+	errorPresenter: Personal:Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
-	scanDirs: off
 
 
 session:
