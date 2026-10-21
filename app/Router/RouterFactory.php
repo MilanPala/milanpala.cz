@@ -8,28 +8,25 @@ use Nette;
 class RouterFactory
 {
 
-	/**
-	 * @return Nette\Application\IRouter
-	 */
-	public function create(): Nette\Application\IRouter
+	public function create(): Nette\Routing\Router
 	{
 		$router = new Nette\Application\Routers\RouteList();
-		$router[] = new Nette\Application\Routers\Route('atlet/', [
+		$router->addRoute('atlet/', [
 			'module' => 'Athlete',
 			'presenter' => 'Competition',
 			'action' => 'default',
 		]);
-		$router[] = new Nette\Application\Routers\Route('atlet/zavody/<year [0-9]+>', [
+		$router->addRoute('atlet/zavody/<year [0-9]+>', [
 			'module' => 'Athlete',
 			'presenter' => 'Competition',
 			'action' => 'year',
 		]);
-		$router[] = new Nette\Application\Routers\Route('atlet/zavody/rekordy', [
+		$router->addRoute('atlet/zavody/rekordy', [
 			'module' => 'Athlete',
 			'presenter' => 'Competition',
 			'action' => 'records',
 		]);
-		$router[] = new Nette\Application\Routers\Route('<presenter>/<action>', [
+		$router->addRoute('<presenter>/<action>', [
 			'module' => 'Personal',
 			'presenter' => 'Homepage',
 			'action' => 'default',
